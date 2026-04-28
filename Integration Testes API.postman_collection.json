@@ -1,0 +1,55 @@
+{
+  "info": {
+    "_postman_id": "faf33fd8-edeb-4052-a08e-b18d0240c7d3",
+    "name": "Integration Testes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "366979"
+  },
+  "item": [
+    {
+      "name": "Get/Product/1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Your test name\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.id).to.eql('1');\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response time is less than 200ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://69f0074c112e1b968e252515.mockapi.io/Products/1",
+          "protocol": "https",
+          "host": [
+            "69f0074c112e1b968e252515",
+            "mockapi",
+            "io"
+          ],
+          "path": [
+            "Products",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
